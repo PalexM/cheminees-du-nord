@@ -12,19 +12,19 @@ export default function Example() {
             <div className="w-full p-6 space-y-4 bg-gray-100">
                 <div className="text-left">
                     <Typography variant="h4" color="blue-gray" className="mb-2 font-bold">
-                        Avantages d'une cheminée sur mesure
+                        {"  Avantages d'une cheminée sur mesure "}
                     </Typography>
                     <ul className="list-disc ml-4 text-blue-gray-700">
-                        <li>Économies sur les coûts de chauffage</li>
-                        <li>Augmentation de la valeur immobilière</li>
-                        <li>Contribution à la protection de l'environnement</li>
-                        <li>Ambiance confortable et esthétique améliorée</li>
+                        <li>{"Économies sur les coûts de chauffage"}</li>
+                        <li>{"Augmentation de la valeur immobilière"}</li>
+                        <li>{"Contribution à la protection de l'environnement"}</li>
+                        <li>{"Ambiance confortable et esthétique améliorée"}</li>
                     </ul>
                 </div>
 
                 <div className="text-left">
                     <Typography variant="h5" color="blue-gray" className="mb-2 font-semibold">
-                        Témoignages
+                        {"Témoignages"}
                     </Typography>
                     <div className="mb-4">
                         <div className="flex items-center">
@@ -49,7 +49,7 @@ export default function Example() {
                             </div>
                         </div>
                         <blockquote className="border-l-4 border-blue-gray-500 pl-4 italic text-blue-gray-700">
-                            "Cheminées du Nord a transformé notre maison. Je recommande vivement !"
+                            {' "Cheminées du Nord a transformé notre maison. Je recommande vivement !"'}
                         </blockquote>
                     </div>
                     <div>
@@ -75,7 +75,7 @@ export default function Example() {
                             </div>
                         </div>
                         <blockquote className="border-l-4 border-blue-gray-500 pl-4 italic text-blue-gray-700">
-                            "Services excellents et produits de qualité !"
+                            {' "Services excellents et produits de qualité !" '}
                         </blockquote>
                     </div>
                 </div>
@@ -103,7 +103,7 @@ export default function Example() {
                     </div>
                     <div className="flex items-center space-x-2">
                         <Square3Stack3DIcon className="h-6 w-6" />
-                        <span>Produits personnalisés</span>
+                        <span>{"Produits personnalisés "}</span>
                     </div>
                 </div>
 
