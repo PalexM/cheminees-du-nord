@@ -15,10 +15,10 @@ function Environement() {
                     </svg>
                 </div>
                 <Typography variant="h2" color="blue-gray" className="text-center mb-4">
-                    Économies d'Énergie et Écologie
+                    {" Économies d'Énergie et Écologie"}
                 </Typography>
                 <Typography variant="lead" color="gray" className="text-center">
-                    En optant pour nos cheminées et poêles à bois ou à pellets, vous faites le choix d'un chauffage écologique et économique. Nos produits sont conçus pour maximiser l'efficacité énergétique, ce qui permet de réduire significativement vos factures de chauffage. De plus, le bois et les pellets sont des sources d’énergie renouvelables et neutres en carbone, contribuant ainsi à la réduction de votre empreinte écologique. Investir dans un poêle à bois ou à pellets, c'est non seulement faire des économies à long terme, mais aussi participer activement à la protection de notre planète.
+                    {"En optant pour nos cheminées et poêles à bois ou à pellets, vous faites le choix d'un chauffage écologique et économique. Nos produits sont conçus pour maximiser l'efficacité énergétique, ce qui permet de réduire significativement vos factures de chauffage. De plus, le bois et les pellets sont des sources d’énergie renouvelables et neutres en carbone, contribuant ainsi à la réduction de votre empreinte écologique. Investir dans un poêle à bois ou à pellets, c'est non seulement faire des économies à long terme, mais aussi participer activement à la protection de notre planète."}
                 </Typography>
             </div>
             <div className="flex-1 hidden md:block">

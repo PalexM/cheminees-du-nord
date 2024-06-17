@@ -7,6 +7,7 @@ import {
     Typography,
     Button,
 } from "@material-tailwind/react";
+import Image from "next/image";
 
 const sections = [
     {
@@ -41,6 +42,7 @@ function InfoSection() {
                             color="transparent"
                             className="m-0 rounded-none text-center"
                         >
+
                             <img
                                 src={section.image}
                                 alt={section.title}
