@@ -32,7 +32,7 @@ const sections = [
 
 function InfoSection() {
     return (
-        <section className="bg-white border border-gray-200 shadow-lg rounded-lg p-8 mt-8 flex flex-col md:flex-row justify-between items-center" style={{ marginTop: "100px" }}>
+        <section className="bg-white border border-gray-200 shadow-lg rounded-lg p-8 mt-8 flex flex-col md:flex-row justify-between items-center">
             <div className="flex flex-wrap justify-center gap-8 w-full">
                 {sections.map((section, index) => (
                     <Card key={index} className="w-full md:max-w-[30%] overflow-hidden">
@@ -42,7 +42,6 @@ function InfoSection() {
                             color="transparent"
                             className="m-0 rounded-none text-center"
                         >
-
                             <img
                                 src={section.image}
                                 alt={section.title}
