@@ -34,7 +34,7 @@ export function Articles() {
       >
         Check out what&apos;s new in the web development and tech worls! Do not
         forget to subscribe to our blog and we will notify you with the latest
-        news.
+        news ALex.
       </Typography>
 
       <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-3">

@@ -1,128 +1,217 @@
 import React from "react";
 import {
-  Navbar as MTNavbar,
+  Navbar,
   Collapse,
+  Typography,
   Button,
   IconButton,
-  Typography,
+  List,
+  ListItem,
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
 } from "@material-tailwind/react";
 import {
-  RectangleStackIcon,
-  UserCircleIcon,
-  CommandLineIcon,
-  XMarkIcon,
+  ChevronDownIcon,
   Bars3Icon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
+import {
+  Bars4Icon,
+  GlobeAmericasIcon,
+  NewspaperIcon,
+  PhoneIcon,
+  RectangleGroupIcon,
+  SquaresPlusIcon,
+  SunIcon,
+  TagIcon,
+  UserGroupIcon,
+  FireIcon,
+  WrenchScrewdriverIcon,
+  PaintBrushIcon,
+  HomeModernIcon
 } from "@heroicons/react/24/solid";
+import { url } from "inspector";
 
-const NAV_MENU = [
+const navListMenuItems = [
   {
-    name: "Page",
-    icon: RectangleStackIcon,
+    title: "Poêles et Cheminées",
+    description: "Installation de Poêles et Cheminées de Qualité",
+    icon: WrenchScrewdriverIcon,
+    url: "/installations"
   },
   {
-    name: "Account",
-    icon: UserCircleIcon,
+    title: "Conduits",
+    description: "Création de Conduits sur Mesure",
+    icon: FireIcon,
+    url: "/conduits"
   },
   {
-    name: "Docs",
-    icon: CommandLineIcon,
-    href: "https://www.material-tailwind.com/docs/react/installation",
+    title: "Nettoyage et Entretien",
+    description: "Nettoyage et Entretien de Conduits et Cheminées",
+    icon: PaintBrushIcon,
+    url: "/entretien"
+  },
+  {
+    title: "Réparation de Poêles",
+    description: "Entretien et Réparation de Poêles pour une Performance Durable",
+    icon: SunIcon,
+    url: "/reparation"
+  },
+  {
+    title: "Réfection Murs et Plafonds",
+    description: "Réfection Expert des Murs et des Plafonds pour un Intérieur Parfaitement Coordonné",
+    icon: HomeModernIcon,
+    url: "/refection"
   },
 ];
 
-interface NavItemProps {
-  children: React.ReactNode;
-  href?: string;
-}
+function NavListMenu() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  const renderItems = navListMenuItems.map(({ icon, title, description, url }, key) => (
+    <a href={url} key={key}>
+      <MenuItem className="flex items-center gap-3 rounded-lg">
+        <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2">
+          {React.createElement(icon, {
+            strokeWidth: 2,
+            className: "h-6 text-gray-900 w-6",
+          })}
+        </div>
+        <div>
+          <Typography
+            variant="h6"
+            color="blue-gray"
+            className="flex items-center text-sm font-bold hover:text-red-500"
+          >
+            {title}
+          </Typography>
+          <Typography
+            variant="paragraph"
+            className="text-xs !font-medium text-blue-gray-500"
+          >
+            {description}
+          </Typography>
+        </div>
+      </MenuItem>
+    </a>
+  ));
 
-function NavItem({ children, href }: NavItemProps) {
   return (
-    <li>
-      <Typography
-        as="a"
-        href={href || "#"}
-        target={href ? "_blank" : "_self"}
-        variant="paragraph"
-        color="gray"
-        className="flex items-center gap-2 font-medium text-gray-900"
+    <React.Fragment>
+      <Menu
+        open={isMenuOpen}
+        handler={setIsMenuOpen}
+        offset={{ mainAxis: 20 }}
+        placement="bottom"
+        allowHover={true}
       >
-        {children}
-      </Typography>
-    </li>
+        <MenuHandler>
+          <Typography as="div" variant="large" className="font-medium ">
+            <ListItem
+              className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900"
+              selected={isMenuOpen || isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen((cur) => !cur)}
+            >
+              Nos Services
+              <ChevronDownIcon
+                strokeWidth={2.5}
+                className={`hidden h-3 w-3 transition-transform lg:block ${isMenuOpen ? "rotate-180" : ""
+                  }`}
+              />
+              <ChevronDownIcon
+                strokeWidth={2.5}
+                className={`block h-3 w-3 transition-transform lg:hidden ${isMobileMenuOpen ? "rotate-180" : ""
+                  }`}
+              />
+            </ListItem>
+          </Typography>
+        </MenuHandler>
+        <MenuList className="hidden max-w-screen-xl rounded-xl lg:block">
+          <ul className="grid grid-cols-3 gap-y-2 outline-none outline-0">
+            {renderItems}
+          </ul>
+        </MenuList>
+      </Menu>
+      <div className="block lg:hidden">
+        <Collapse open={isMobileMenuOpen}>{renderItems}</Collapse>
+      </div>
+    </React.Fragment>
   );
 }
 
-export function Navbar() {
-  const [open, setOpen] = React.useState(false);
+function NavList() {
+  return (
+    <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
+      <Typography
+        as="a"
+        href="/"
+        variant="large"
+        color="blue-gray"
+        className="font-medium"
+      >
+        <ListItem className="flex items-center gap-2 py-2 pr-4">Accueil</ListItem>
+      </Typography>
+      <NavListMenu />
+      <Typography
+        as="a"
+        href="realisations"
+        variant="large"
+        color="blue-gray"
+        className="font-medium"
+      >
+        <ListItem className="flex items-center gap-2 py-2 pr-4">Nos Ralisations</ListItem>
+      </Typography>
+      <Typography
+        as="a"
+        href="#"
+        variant="large"
+        color="blue-gray"
+        className="font-medium"
+      >
+        <ListItem className="flex items-center gap-2 py-2 pr-4">Contactez-Nous</ListItem>
+      </Typography>
+    </List>
+  );
+}
 
-  const handleOpen = () => setOpen((cur) => !cur);
+export function StickyNavbar() {
+  const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {
     window.addEventListener(
       "resize",
-      () => window.innerWidth >= 960 && setOpen(false)
+      () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
 
   return (
-    <MTNavbar shadow={false} fullWidth className="border-0 sticky top-0 z-50">
-      <div className="container mx-auto flex items-center justify-between">
-        <Typography
-          as="a"
-          href="https://www.material-tailwind.com"
-          target="_blank"
-          color="blue-gray"
-          className="text-lg font-bold"
-        >
-          Material Tailwind
-        </Typography>
-        <ul className="ml-10 hidden items-center gap-8 lg:flex">
-          {NAV_MENU.map(({ name, icon: Icon, href }) => (
-            <NavItem key={name} href={href}>
-              <Icon className="h-5 w-5" />
-              {name}
-            </NavItem>
-          ))}
-        </ul>
-        <div className="hidden items-center gap-2 lg:flex">
-          <Button variant="text">Sign In</Button>
-          <a href="https://www.material-tailwind.com/blocks" target="_blank">
-            <Button color="gray">blocks</Button>
-          </a>
+    <Navbar className="h-max max-w-full px-4 py-2">
+      <div className="flex items-center justify-between text-blue-gray-900">
+        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="/image/logo_firma.png" className="h-24" alt="Cheminnee du Nord" />
+          <span className="self-center text-xl lg:text-2xl font-semibold whitespace-nowrap dark:text-white" style={{ marginLeft: "-20px" }}>Cheminées du Nord</span>
+        </a>
+        <div className="hidden lg:block">
+          <NavList />
         </div>
         <IconButton
           variant="text"
-          color="gray"
-          onClick={handleOpen}
-          className="ml-auto inline-block lg:hidden"
+          color="blue-gray"
+          className="lg:hidden"
+          onClick={() => setOpenNav(!openNav)}
         >
-          {open ? (
-            <XMarkIcon strokeWidth={2} className="h-6 w-6" />
+          {openNav ? (
+            <XMarkIcon className="h-6 w-6" strokeWidth={2} />
           ) : (
-            <Bars3Icon strokeWidth={2} className="h-6 w-6" />
+            <Bars3Icon className="h-6 w-6" strokeWidth={2} />
           )}
         </IconButton>
       </div>
-      <Collapse open={open}>
-        <div className="container mx-auto mt-3 border-t border-gray-200 px-2 pt-4">
-          <ul className="flex flex-col gap-4">
-            {NAV_MENU.map(({ name, icon: Icon }) => (
-              <NavItem key={name}>
-                <Icon className="h-5 w-5" />
-                {name}
-              </NavItem>
-            ))}
-          </ul>
-          <div className="mt-6 mb-4 flex items-center gap-2">
-            <Button variant="text">Sign In</Button>
-            <a href="https://www.material-tailwind.com/blocks" target="_blank">
-              <Button color="gray">blocks</Button>
-            </a>
-          </div>
-        </div>
+      <Collapse open={openNav}>
+        <NavList />
       </Collapse>
-    </MTNavbar>
+    </Navbar>
   );
 }
-
-export default Navbar;
