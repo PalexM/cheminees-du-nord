@@ -34,8 +34,8 @@ function InfoSection() {
     return (
         <section className="bg-white border border-gray-200 shadow-lg rounded-lg p-8 mt-8 flex flex-col md:flex-row justify-between items-center">
             <div className="flex flex-wrap justify-center gap-8 w-full">
-                {sections.map((section, index) => (
-                    <Card key={index} className="w-full md:max-w-[30%] overflow-hidden">
+                {sections.map((section) => (
+                    <Card className="w-full md:max-w-[30%] overflow-hidden">
                         <CardHeader
                             floated={false}
                             shadow={false}
