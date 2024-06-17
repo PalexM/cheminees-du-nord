@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { StickyNavbar, Layout, FixedPlugin } from "@/components";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const roboto = Roboto({
   subsets: ["latin"],

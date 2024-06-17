@@ -19,8 +19,6 @@ export default function Campaign() {
       <Expertises />
       <InfoSection />
       <Environement />
-      {/* <Posts />
-      <Articles /> */}
       <Footer />
     </>
   );
