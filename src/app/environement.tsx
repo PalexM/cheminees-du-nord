@@ -1,10 +1,8 @@
 "use client";
 
-import {
-    Typography,
-} from "@material-tailwind/react";
+import React from 'react';
 
-function Environement() {
+function Environment() {
     return (
         <section className="bg-white border border-gray-200 shadow-lg rounded-lg p-8 mt-8 flex flex-col md:flex-row justify-between items-center" style={{ marginTop: "100px" }}>
             <div className="flex-1 pr-8">
@@ -14,12 +12,12 @@ function Environement() {
                         <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" fill="green" />
                     </svg>
                 </div>
-                <Typography variant="h2" color="blue-gray" className="text-center mb-4">
-                    {" Économies d'Énergie et Écologie"}
-                </Typography>
-                <Typography variant="lead" color="gray" className="text-center">
+                <h2 className="text-center mb-4 text-blue-gray-900 text-3xl font-bold">
+                    {"Économies d'Énergie et Écologie"}
+                </h2>
+                <p className="text-center text-gray-700 font-normal">
                     {"En optant pour nos cheminées et poêles à bois ou à pellets, vous faites le choix d'un chauffage écologique et économique. Nos produits sont conçus pour maximiser l'efficacité énergétique, ce qui permet de réduire significativement vos factures de chauffage. De plus, le bois et les pellets sont des sources d’énergie renouvelables et neutres en carbone, contribuant ainsi à la réduction de votre empreinte écologique. Investir dans un poêle à bois ou à pellets, c'est non seulement faire des économies à long terme, mais aussi participer activement à la protection de notre planète."}
-                </Typography>
+                </p>
             </div>
             <div className="flex-1 hidden md:block">
                 <img
@@ -32,4 +30,4 @@ function Environement() {
     );
 }
 
-export default Environement;
+export default Environment;

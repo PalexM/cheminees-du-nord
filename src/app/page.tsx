@@ -1,10 +1,10 @@
 // components
-import { Footer } from "@/components";
+
 
 // sections
 import Hero from "./hero";
-import Posts from "./posts";
-import Articles from "./articles";
+// import Posts from "./posts";
+// import Articles from "./articles";
 import Expertises from "./expertise";
 import { cookies } from "next/headers";
 import Environement from "./environement";
@@ -19,7 +19,7 @@ export default function Campaign() {
       <Expertises />
       <InfoSection />
       <Environement />
-      <Footer />
+
     </>
   );
 }

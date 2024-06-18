@@ -1,8 +1,5 @@
 "use client";
 
-import {
-    Typography,
-} from "@material-tailwind/react";
 import { FireIcon } from "@heroicons/react/24/solid"; // Ensure you have the correct import for FireIcon
 
 function Services() {
@@ -40,12 +37,12 @@ function Services() {
                         <div className="mb-4">
                             {service.icon}
                         </div>
-                        <Typography variant="h4" color="blue-gray" className="mb-2">
+                        <h4 className="text-blue-gray-900 mb-2 text-xl font-bold">
                             {service.title}
-                        </Typography>
-                        <Typography variant="lead" color="gray" className="font-normal">
+                        </h4>
+                        <p className="text-gray-700 font-normal">
                             {service.description}
-                        </Typography>
+                        </p>
                     </div>
                 ))}
             </div>

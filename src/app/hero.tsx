@@ -1,41 +1,84 @@
 "use client";
 
-import Image from "next/image";
-import { Button, Typography, } from "@material-tailwind/react";
-import Graph from "./grafic_prix";
+import React, { useState, useRef } from 'react';
 
+const Hero = () => {
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const inputRef = useRef(null);
 
-function Hero() {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    setIsLoading(true);
+    // Simulated form submission
+    setTimeout(() => {
+      alert(`Email submitted: ${email}`);
+      setIsLoading(false);
+      setEmail(''); // Clear the input field after submission
+    }, 2000);
+  };
+
   return (
-    <header className="">
-      <div className=" w-full flex flex-col lg:flex-row  pt-12 pb-24">
-        <div className=" landing_form w-full lg:w-2/3 flex flex-col items-center justify-center max-w-[800px] mx-auto">
-          <Typography
-            color="blue-gray"
-            className="w-full text-[30px] lg:text-[48px] font-bold mb-4"
-          >
-            Votre expert en cheminées et poêles sur mesure
-          </Typography>
-          <Graph />
-        </div>
+    <section
+      className="relative bg-white overflow-hidden"
+      style={{ backgroundImage: "url('/image/pattern-white.svg')", backgroundPosition: "center" }}
+    >
+      <div className="py-20 md:py-28">
+        <div className="container px-4 mx-auto">
+          <div className="flex flex-wrap xl:items-center -mx-4">
+            <div className="w-full md:w-1/2 px-4 mb-16 md:mb-0 md:pr-12"> {/* Added md:pr-12 for spacing */}
+              <h1 className="mb-6 text-3xl md:text-5xl lg:text-6xl leading-tight font-bold tracking-tight">
+                {"Votre expert en cheminées et poêles sur mesure"}
+              </h1>
+              {/* Form styling for better visibility and elegance */}
+              <form className="w-full max-w-md space-y-4 bg-white p-6 rounded-lg shadow-lg" onSubmit={handleSubmit}>
+                <input
+                  required
+                  type="email"
+                  value={email}
+                  ref={inputRef}
+                  autoComplete="email"
+                  placeholder="tom@cruise.com"
+                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <button
+                  className="w-full py-3 px-6 text-lg leading-5 text-white font-medium bg-orange-500 hover:bg-orange-600 focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50 rounded-lg shadow-sm"
+                  type="submit"
+                  disabled={isLoading}
+                >
+                  Demander un devis gratuitement
+                  {isLoading && (
+                    <span className="loading loading-spinner loading-xs ml-2"></span>
+                  )}
 
-
-        <div className=" w-full lg:w-1/3 flex flex-col items-center justify-center hidden lg:flex" style={{ marginTop: "80px" }}>
-          <div className="relative h-96 w-full max-w-md lg:max-w-none lg:h-[55rem]" >
-            <Image
-              width={700}
-              height={700}
-              src="/image/realisations/img11.jpeg"
-              alt="cheminée"
-              className="image-landing rounded-full justify-center object-cover"
-              style={{ objectFit: 'cover', }}
-            />
+                </button>
+              </form>
+            </div>
+            <div className="w-full md:w-1/2 px-4 lg:px-12"> {/* Adjusted padding for larger screens */}
+              <div className="relative mx-auto md:mr-0 max-w-full">
+                <img
+                  className="absolute z-10 -left-14 -top-12 w-28 lg:w-36 xl:w-48"
+                  src="image/circle3.svg"
+                  alt="Yellow Circle"
+                />
+                <img
+                  className="absolute z-10 -right-7 -bottom-8 w-28 lg:w-36 xl:w-48"
+                  src="image/dots.svg"
+                  alt="Blue Dots"
+                />
+                <img
+                  className="relative w-full h-auto rounded-2xl object-cover"
+                  src="/image/realisations/img11.jpeg"
+                  alt="Hero"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </header >
+    </section>
   );
-}
-
+};
 
 export default Hero;

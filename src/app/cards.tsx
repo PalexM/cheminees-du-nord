@@ -1,12 +1,5 @@
 "use client";
 
-import {
-    Card,
-    CardHeader,
-    CardBody,
-    Typography,
-    Button,
-} from "@material-tailwind/react";
 import Image from "next/image";
 
 const sections = [
@@ -34,32 +27,27 @@ function InfoSection() {
     return (
         <section className="bg-white border border-gray-200 shadow-lg rounded-lg p-8 mt-8 flex flex-col md:flex-row justify-between items-center">
             <div className="flex flex-wrap justify-center gap-8 w-full">
-                {sections.map((section) => (
-                    <Card className="w-full md:max-w-[30%] overflow-hidden">
-                        <CardHeader
-                            floated={false}
-                            shadow={false}
-                            color="transparent"
-                            className="m-0 rounded-none text-center"
-                        >
+                {sections.map((section, index) => (
+                    <div key={`card-${index}`} className="w-full md:max-w-[30%] overflow-hidden border border-gray-200 shadow-sm rounded-lg">
+                        <div className="m-0 rounded-none text-center">
                             <img
                                 src={section.image}
                                 alt={section.title}
                                 className="h-52 w-full object-cover rounded-t-lg"
                             />
-                        </CardHeader>
-                        <CardBody className="text-center">
-                            <Typography variant="h4" color="blue-gray" className="mb-2">
+                        </div>
+                        <div className="p-4 text-center">
+                            <h4 className="text-blue-gray-900 mb-2 text-xl font-bold">
                                 {section.title}
-                            </Typography>
-                            <Typography variant="lead" color="gray" className="font-normal mb-4">
+                            </h4>
+                            <p className="text-gray-700 font-normal mb-4">
                                 {section.description}
-                            </Typography>
-                            <Button color="lightBlue" size="lg">
+                            </p>
+                            <button className="py-2 px-4 text-white bg-blue-500 hover:bg-blue-600 rounded-lg">
                                 {section.buttonText}
-                            </Button>
-                        </CardBody>
-                    </Card>
+                            </button>
+                        </div>
+                    </div>
                 ))}
             </div>
         </section>
