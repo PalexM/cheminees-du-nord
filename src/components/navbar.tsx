@@ -67,12 +67,60 @@ const navListMenuItems = [
   },
 ];
 
+function MenuItem2(props: any) {
+  return (
+    <MenuItem {...props} />
+  );
+}
+
+function Typography2(props: any) {
+  return (
+    <Typography {...props} />
+  );
+}
+
+function ListItem2(props: any) {
+  return (
+    <ListItem {...props} />
+  );
+}
+
+function MenuList2(props: any) {
+  return (
+    <MenuList {...props} />
+  );
+}
+
+
+function List2(props: any) {
+  return (
+    <List {...props} />
+  );
+}
+
+
+function Navbar2(props: any) {
+
+  return (
+    <Navbar {...props} />
+  );
+}
+
+function IconButton2(props: any) {
+  return (
+    <IconButton {...props} />
+  );
+}
+
+
+
+
 function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const renderItems = navListMenuItems.map(({ icon, title, description, url }, key) => (
     <a href={url} key={key}>
-      <MenuItem className="flex items-center gap-3 rounded-lg">
+      <MenuItem2 className="flex items-center gap-3 rounded-lg">
         <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2">
           {React.createElement(icon, {
             strokeWidth: 2,
@@ -80,21 +128,21 @@ function NavListMenu() {
           })}
         </div>
         <div>
-          <Typography
+          <Typography2
             variant="h6"
             color="blue-gray"
             className="flex items-center text-sm font-bold hover:text-red-500"
           >
             {title}
-          </Typography>
-          <Typography
+          </Typography2>
+          <Typography2
             variant="paragraph"
             className="text-xs !font-medium text-blue-gray-500"
           >
             {description}
-          </Typography>
+          </Typography2>
         </div>
-      </MenuItem>
+      </MenuItem2>
     </a>
   ));
 
@@ -108,8 +156,8 @@ function NavListMenu() {
         allowHover={true}
       >
         <MenuHandler>
-          <Typography as="div" variant="large" className="font-medium ">
-            <ListItem
+          <Typography2 as="div" variant="large" className="font-medium ">
+            <ListItem2
               className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900"
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
@@ -125,14 +173,14 @@ function NavListMenu() {
                 className={`block h-3 w-3 transition-transform lg:hidden ${isMobileMenuOpen ? "rotate-180" : ""
                   }`}
               />
-            </ListItem>
-          </Typography>
+            </ListItem2>
+          </Typography2>
         </MenuHandler>
-        <MenuList className="hidden max-w-screen-xl rounded-xl lg:block">
+        <MenuList2 className="hidden max-w-screen-xl rounded-xl lg:block">
           <ul className="grid grid-cols-3 gap-y-2 outline-none outline-0">
             {renderItems}
           </ul>
-        </MenuList>
+        </MenuList2>
       </Menu>
       <div className="block lg:hidden">
         <Collapse open={isMobileMenuOpen}>{renderItems}</Collapse>
@@ -143,36 +191,36 @@ function NavListMenu() {
 
 function NavList() {
   return (
-    <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
-      <Typography
+    <List2 className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
+      <Typography2
         as="a"
         href="/"
         variant="large"
         color="blue-gray"
         className="font-medium"
       >
-        <ListItem className="flex items-center gap-2 py-2 pr-4">Accueil</ListItem>
-      </Typography>
+        <ListItem2 className="flex items-center gap-2 py-2 pr-4">Accueil</ListItem2>
+      </Typography2>
       <NavListMenu />
-      <Typography
+      <Typography2
         as="a"
         href="realisations"
         variant="large"
         color="blue-gray"
         className="font-medium"
       >
-        <ListItem className="flex items-center gap-2 py-2 pr-4">Nos Ralisations</ListItem>
-      </Typography>
-      <Typography
+        <ListItem2 className="flex items-center gap-2 py-2 pr-4">Nos Ralisations</ListItem2>
+      </Typography2>
+      <Typography2
         as="a"
         href="#"
         variant="large"
         color="blue-gray"
         className="font-medium"
       >
-        <ListItem className="flex items-center gap-2 py-2 pr-4">Contactez-Nous</ListItem>
-      </Typography>
-    </List>
+        <ListItem2 className="flex items-center gap-2 py-2 pr-4">Contactez-Nous</ListItem2>
+      </Typography2>
+    </List2>
   );
 }
 
@@ -187,7 +235,7 @@ export function StickyNavbar() {
   }, []);
 
   return (
-    <Navbar className="h-max max-w-full px-4 py-2">
+    <Navbar2 className="h-max max-w-full px-4 py-2">
       <div className="flex items-center justify-between text-blue-gray-900">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="/image/logo_firma.png" className="h-24" alt="Cheminnee du Nord" />
@@ -196,7 +244,7 @@ export function StickyNavbar() {
         <div className="hidden lg:block">
           <NavList />
         </div>
-        <IconButton
+        <IconButton2
           variant="text"
           color="blue-gray"
           className="lg:hidden"
@@ -207,11 +255,11 @@ export function StickyNavbar() {
           ) : (
             <Bars3Icon className="h-6 w-6" strokeWidth={2} />
           )}
-        </IconButton>
+        </IconButton2>
       </div>
       <Collapse open={openNav}>
         <NavList />
       </Collapse>
-    </Navbar>
+    </Navbar2>
   );
 }
