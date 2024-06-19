@@ -37,6 +37,7 @@ export default function RootLayout({
         <StickyNavbar />
         <Layout>
           {children}
+          <SpeedInsights />
         </Layout>
         <Footer />
       </body>
