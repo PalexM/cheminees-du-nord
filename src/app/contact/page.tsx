@@ -20,7 +20,7 @@ const ContactSection = () => {
         setCaptchaResult(result.toString());
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: any) => {
         e.preventDefault();
         if (captchaInputValue !== captchaResult) {
             alert('Captcha incorrect!');
