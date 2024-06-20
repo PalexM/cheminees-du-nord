@@ -73,11 +73,7 @@ function MenuItem2(props: any) {
   );
 }
 
-function Typography2(props: any) {
-  return (
-    <Typography {...props} />
-  );
-}
+
 
 function ListItem2(props: any) {
   return (
@@ -128,19 +124,16 @@ function NavListMenu() {
           })}
         </div>
         <div>
-          <Typography2
-            variant="h6"
-            color="blue-gray"
-            className="flex items-center text-sm font-bold hover:text-red-500"
-          >
+          <Typography as="" variant="h6" color="blue-gray" className="flex items-center text-sm font-bold hover:text-red-500">
             {title}
-          </Typography2>
-          <Typography2
+          </Typography>
+          <Typography
+            as=""
             variant="paragraph"
             className="text-xs !font-medium text-blue-gray-500"
           >
             {description}
-          </Typography2>
+          </Typography>
         </div>
       </MenuItem2>
     </a>
@@ -156,7 +149,7 @@ function NavListMenu() {
         allowHover={true}
       >
         <MenuHandler>
-          <Typography2 as="div" variant="large" className="font-medium ">
+          <Typography as="div" variant="large" className="font-medium ">
             <ListItem2
               className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900"
               selected={isMenuOpen || isMobileMenuOpen}
@@ -174,7 +167,7 @@ function NavListMenu() {
                   }`}
               />
             </ListItem2>
-          </Typography2>
+          </Typography>
         </MenuHandler>
         <MenuList2 className="hidden max-w-screen-xl rounded-xl lg:block">
           <ul className="grid grid-cols-3 gap-y-2 outline-none outline-0">
@@ -192,7 +185,7 @@ function NavListMenu() {
 function NavList() {
   return (
     <List2 className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
-      <Typography2
+      <Typography
         as="a"
         href="/"
         variant="large"
@@ -200,9 +193,9 @@ function NavList() {
         className="font-medium"
       >
         <ListItem2 className="flex items-center gap-2 py-2 pr-4">Accueil</ListItem2>
-      </Typography2>
+      </Typography>
       <NavListMenu />
-      <Typography2
+      <Typography
         as="a"
         href="realisations"
         variant="large"
@@ -210,8 +203,8 @@ function NavList() {
         className="font-medium"
       >
         <ListItem2 className="flex items-center gap-2 py-2 pr-4">{" Nos Réalisations "}</ListItem2 >
-      </Typography2>
-      <Typography2
+      </Typography>
+      <Typography
         as="a"
         href="#"
         variant="large"
@@ -219,7 +212,7 @@ function NavList() {
         className="font-medium"
       >
         <ListItem2 className="flex items-center gap-2 py-2 pr-4">Contactez-Nous</ListItem2>
-      </Typography2>
+      </Typography>
     </List2>
   );
 }
