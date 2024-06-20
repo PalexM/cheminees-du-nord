@@ -20,21 +20,12 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import {
-  Bars4Icon,
-  GlobeAmericasIcon,
-  NewspaperIcon,
-  PhoneIcon,
-  RectangleGroupIcon,
-  SquaresPlusIcon,
-  SunIcon,
-  TagIcon,
-  UserGroupIcon,
-  FireIcon,
   WrenchScrewdriverIcon,
+  FireIcon,
   PaintBrushIcon,
+  SunIcon,
   HomeModernIcon
 } from "@heroicons/react/24/solid";
-import { url } from "inspector";
 
 const navListMenuItems = [
   {
@@ -75,8 +66,6 @@ function MenuItem2(props: any) {
   );
 }
 
-
-
 function ListItem2(props: any) {
   return (
     <ListItem {...props} />
@@ -89,16 +78,13 @@ function MenuList2(props: any) {
   );
 }
 
-
 function List2(props: any) {
   return (
     <List {...props} />
   );
 }
 
-
 function Navbar2(props: any) {
-
   return (
     <Navbar {...props} />
   );
@@ -109,9 +95,6 @@ function IconButton2(props: any) {
     <IconButton {...props} />
   );
 }
-
-
-
 
 function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -213,7 +196,7 @@ function NavList() {
         onPointerEnterCapture={undefined}
         onPointerLeaveCapture={undefined}
       >
-        <ListItem2 className="flex items-center gap-2 py-2 pr-4">{" Nos Réalisations "}</ListItem2 >
+        <ListItem2 className="flex items-center gap-2 py-2 pr-4">{"Nos Réalisations"}</ListItem2>
       </Typography>
       <Typography
         as="a"
@@ -241,7 +224,7 @@ export function StickyNavbar() {
   }, []);
 
   return (
-    <Navbar2 className="h-max max-w-full px-4 py-2">
+    <Navbar2 className="h-max max-w-full px-4 py-2 border-b border-gray-200">
       <div className="flex items-center justify-between text-blue-gray-900">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="/image/logo_firma.png" className="h-24" alt="Cheminnee du Nord" />
