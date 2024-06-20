@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   Navbar,
@@ -124,13 +126,17 @@ function NavListMenu() {
           })}
         </div>
         <div>
-          <Typography as="" variant="h6" color="blue-gray" className="flex items-center text-sm font-bold hover:text-red-500">
+          <Typography variant="h6" color="blue-gray" className="flex items-center text-sm font-bold hover:text-red-500" placeholder={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}>
             {title}
           </Typography>
           <Typography
-            as=""
             variant="paragraph"
             className="text-xs !font-medium text-blue-gray-500"
+            placeholder={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
           >
             {description}
           </Typography>
@@ -149,7 +155,9 @@ function NavListMenu() {
         allowHover={true}
       >
         <MenuHandler>
-          <Typography as="div" variant="large" className="font-medium ">
+          <Typography as="div" className="font-medium " placeholder={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}>
             <ListItem2
               className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900"
               selected={isMenuOpen || isMobileMenuOpen}
@@ -188,9 +196,10 @@ function NavList() {
       <Typography
         as="a"
         href="/"
-        variant="large"
         color="blue-gray"
-        className="font-medium"
+        className="font-medium" placeholder={undefined}
+        onPointerEnterCapture={undefined}
+        onPointerLeaveCapture={undefined}
       >
         <ListItem2 className="flex items-center gap-2 py-2 pr-4">Accueil</ListItem2>
       </Typography>
@@ -198,18 +207,22 @@ function NavList() {
       <Typography
         as="a"
         href="realisations"
-        variant="large"
         color="blue-gray"
         className="font-medium"
+        placeholder={undefined}
+        onPointerEnterCapture={undefined}
+        onPointerLeaveCapture={undefined}
       >
         <ListItem2 className="flex items-center gap-2 py-2 pr-4">{" Nos Réalisations "}</ListItem2 >
       </Typography>
       <Typography
         as="a"
         href="#"
-        variant="large"
         color="blue-gray"
         className="font-medium"
+        placeholder={undefined}
+        onPointerEnterCapture={undefined}
+        onPointerLeaveCapture={undefined}
       >
         <ListItem2 className="flex items-center gap-2 py-2 pr-4">Contactez-Nous</ListItem2>
       </Typography>
