@@ -33,7 +33,9 @@ const Entretien = () => {
                                 {"Faites confiance à notre expertise pour un entretien complet et professionnel de vos conduits et cheminées, garantissant un environnement sûr et confortable pour votre maison."}
                             </p>
                             <button className="py-2 px-4 bg-orange-500 hover:bg-orange-600 text-white rounded-lg mb-4">
-                                Nous-Contacter
+                                <a href="/contact">
+                                    Nous-Contacter
+                                </a>
                             </button>
                         </div>
                         <div className="w-full md:w-1/2 px-4 lg:px-12"> {/* Adjusted padding for larger screens */}

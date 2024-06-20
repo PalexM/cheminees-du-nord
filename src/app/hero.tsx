@@ -38,7 +38,7 @@ const Hero = () => {
                   value={email}
                   ref={inputRef}
                   autoComplete="email"
-                  placeholder="tom@cruise.com"
+                  placeholder="dupont@hotmail.fr"
                   className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                   onChange={(e) => setEmail(e.target.value)}
                 />

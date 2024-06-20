@@ -59,7 +59,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="hover:underline"
           >
-            Creative Tim
+            Alexandru Pop
           </a>
           .
         </p>

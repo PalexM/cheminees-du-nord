@@ -21,7 +21,9 @@ const Reparation = () => {
                                 {"Nos services d'entretien et de réparation de poêles sont conçus pour prolonger la durée de vie de votre équipement tout en assurant une efficacité optimale. Que votre poêle nécessite un simple ajustement, une réparation ou un entretien périodique, notre équipe est formée pour identifier et résoudre efficacement tout problème. Nous utilisons des pièces de rechange de qualité et des techniques éprouvées pour garantir que votre poêle fonctionne de manière fiable et économe en énergie. Avec notre engagement envers la qualité et la satisfaction du client, nous sommes là pour vous aider à maintenir un environnement chaleureux et confortable toute l'année."}
                             </p>
                             <button className="py-2 px-4 bg-orange-500 hover:bg-orange-600 text-white rounded-lg">
-                                Nous-Contacter
+                                <a href="/contact">
+                                    Nous-Contacter
+                                </a>
                             </button>
                         </div>
                         <div className="w-full md:w-1/2 px-4 lg:px-12"> {/* Adjusted padding for larger screens */}

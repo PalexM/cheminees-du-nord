@@ -21,7 +21,9 @@ const Refaction = () => {
                                 {"Notre entreprise offre également des services spécialisés de réfection des murs et des plafonds, complémentaires à notre expertise dans l'installation de poêles, cheminées et conduits. Que ce soit pour préparer vos murs et plafonds avant l'installation d'un nouveau système de chauffage ou pentru rénover l'esthétique de votre intérieur după des travaux, notre équipe expérimentée est là pentru vous offrir des solutions sur mesure. Nous nous engageons à utiliser des matériaux de qualité și des techniques de pointe pentru garantir des résultats durables et esthétiquement agréables. Faites confiance à notre expertise pentru transformer votre espace cu profesionism și précisions, în harmonie cu vos besoins și votre vision."}
                             </p>
                             <button className="py-2 px-4 bg-orange-500 hover:bg-orange-600 text-white rounded-lg">
-                                Nous-Contacter
+                                <a href="/contact">
+                                    Nous-Contacter
+                                </a>
                             </button>
                         </div>
                         <div className="w-full md:w-1/2 px-4 lg:px-12"> {/* Adjusted padding for larger screens */}
