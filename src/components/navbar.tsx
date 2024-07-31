@@ -228,7 +228,7 @@ export function StickyNavbar() {
       <div className="flex items-center justify-between text-blue-gray-900">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="/image/logo_firma.png" className="h-24" alt="Cheminnee du Nord" />
-          <span className="self-center text-xl lg:text-2xl font-semibold whitespace-nowrap dark:text-white" style={{ marginLeft: "-20px" }}>Cheminées du Nord</span>
+          <span className="self-center text-xl lg:text-2xl font-semibold whitespace-nowrap dark:text-white" >Cheminées du Nord</span>
         </a>
         <div className="hidden lg:block">
           <NavList />
