@@ -14,8 +14,8 @@ const Entretien = () => {
                     </div>
                     <div className="flex flex-wrap xl:items-start -mx-4">
                         <div className="w-full md:w-1/2 px-4 mb-16 md:mb-0 md:pr-12">
-                            <h2 className="mb-6 text-2xl md:text-3xl lg:text-4xl leading-tight font-bold tracking-tight">
-                                {"Entretien Régulier et Ramonage pour la Sécurité de Votre Maison"}
+                            <h2 className="mb-6 text-2xl md:text-3xl lg:text-4xl leading-tight  tracking-tight">
+                                {"Entretien régulier et ramonage pour la sécurité de votre maison"}
                             </h2>
                             <p className="text-lg mb-4 text-gray-700">
                                 {"Assurez-vous que vos cheminées et conduits fonctionnent de manière optimale avec nos services professionnels de nettoyage, entretien et ramonage. L'entretien régulier et le ramonage sont non seulement essentiels pour prévenir les risques d'incendie, mais ils sont également obligatoires selon la réglementation en vigueur. Un entretien régulier assure une efficacité énergétique maximale et prolonge la durée de vie de vos installations."}
@@ -34,7 +34,7 @@ const Entretien = () => {
                             </p>
                             <button className="py-2 px-4 bg-orange-500 hover:bg-orange-600 text-white rounded-lg mb-4">
                                 <a href="/contact">
-                                    Nous-Contacter
+                                Contactez-nous
                                 </a>
                             </button>
                         </div>

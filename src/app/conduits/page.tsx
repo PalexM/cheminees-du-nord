@@ -14,8 +14,8 @@ const Conduits = () => {
                     </div>
                     <div className="flex flex-wrap xl:items-start -mx-4">
                         <div className="w-full md:w-1/2 px-4 mb-16 md:mb-0 md:pr-12">
-                            <h2 className="mb-6 text-2xl md:text-3xl lg:text-4xl leading-tight font-bold tracking-tight">
-                                {"Conduits Sur Mesure pour Votre Sécurité et Confort"}
+                            <h2 className="mb-6 text-2xl md:text-3xl lg:text-4xl leading-tight tracking-tight">
+                                {"Conduits sur mesure pour votre sécurité et confort"}
                             </h2>
                             <p className="text-lg mb-4 text-gray-700">
                                 {"La création de conduits est une étape cruciale dans l'installation de cheminées et poêles. Notre équipe spécialisée propose une gamme complète de solutions sur mesure pour répondre à vos besoins spécifiques en matière d'évacuation des fumées. Que vous optiez pour des conduits extérieurs ou intérieurs, en acier inoxydable ou en céramique, nous concevons et installons des conduits qui garantissent une performance optimale tout en respectant les normes de sécurité les plus strictes."}
@@ -29,7 +29,7 @@ const Conduits = () => {
 
                             <button className="py-2 px-4 bg-orange-500 hover:bg-orange-600 text-white rounded-lg">
                                 <a href="/contact">
-                                    Nous-Contacter
+                                Contactez-nous
                                 </a>
                             </button>
                         </div>

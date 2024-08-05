@@ -6,7 +6,7 @@ function Services() {
     const services = [
         {
             title: "Expertise et Savoir-Faire",
-            description: "Nos techniciens qualifiés possèdent une expertise reconnue dans l'installation et l'entretien de cheminées et poêles. Nous utilisons des techniques éprouvées et des matériaux de haute qualité pour garantir une durabilité et une performance optimales.",
+            description: "Nos techniciens qualifiés possèdent une expertise reconnue dans l'installation et l'entretien des cheminées et des poêles. Nous utilisons des techniques éprouvées et des matériaux de haute qualité pour garantir une durabilité et une performance optimales.",
             icon: <FireIcon className="h-6 w-6 text-red-500 mx-auto mb-2" />,
         },
         {

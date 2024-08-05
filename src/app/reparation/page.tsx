@@ -14,15 +14,15 @@ const Reparation = () => {
                     </div>
                     <div className="flex flex-wrap xl:items-start -mx-4">
                         <div className="w-full md:w-1/2 px-4 mb-16 md:mb-0 md:pr-12">
-                            <h2 className="mb-6 text-2xl md:text-3xl lg:text-4xl leading-tight font-bold tracking-tight">
-                                {"Expertise en Entretien et Réparation de Poêles pour une Performance Durable"}
+                            <h2 className="mb-6 text-2xl md:text-3xl lg:text-4xl leading-tight tracking-tight">
+                                {"Expertise en entretien et réparation de poêles pour une performance durable"}
                             </h2>
                             <p className="text-lg mb-4 text-gray-700">
                                 {"Nos services d'entretien et de réparation de poêles sont conçus pour prolonger la durée de vie de votre équipement tout en assurant une efficacité optimale. Que votre poêle nécessite un simple ajustement, une réparation ou un entretien périodique, notre équipe est formée pour identifier et résoudre efficacement tout problème. Nous utilisons des pièces de rechange de qualité et des techniques éprouvées pour garantir que votre poêle fonctionne de manière fiable et économe en énergie. Avec notre engagement envers la qualité et la satisfaction du client, nous sommes là pour vous aider à maintenir un environnement chaleureux et confortable toute l'année."}
                             </p>
                             <button className="py-2 px-4 bg-orange-500 hover:bg-orange-600 text-white rounded-lg">
                                 <a href="/contact">
-                                    Nous-Contacter
+                                Contactez-nous
                                 </a>
                             </button>
                         </div>

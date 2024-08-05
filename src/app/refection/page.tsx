@@ -14,15 +14,15 @@ const Refaction = () => {
                     </div>
                     <div className="flex flex-wrap xl:items-start -mx-4">
                         <div className="w-full md:w-1/2 px-4 mb-16 md:mb-0 md:pr-12">
-                            <h2 className="mb-6 text-2xl md:text-3xl lg:text-4xl leading-tight font-bold tracking-tight">
-                                {"Réfection Expert des murs et des plafonds pour un intérieur parfaitement coordonné"}
+                            <h2 className="mb-6 text-2xl md:text-3xl lg:text-4xl leading-tight  tracking-tight">
+                                {"Réfection des murs et des plafonds pour un intérieur parfaitement coordonné"}
                             </h2>
                             <p className="text-lg mb-4 text-gray-700">
-                                {"Notre entreprise offre également des services spécialisés de réfection des murs et des plafonds, complémentaires à notre expertise dans l'installation de poêles, cheminées et conduits. Que ce soit pour préparer vos murs et plafonds avant l'installation d'un nouveau système de chauffage ou pentru rénover l'esthétique de votre intérieur după des travaux, notre équipe expérimentée est là pentru vous offrir des solutions sur mesure. Nous nous engageons à utiliser des matériaux de qualité și des techniques de pointe pentru garantir des résultats durables et esthétiquement agréables. Faites confiance à notre expertise pentru transformer votre espace cu profesionism și précisions, în harmonie cu vos besoins și votre vision."}
+                                {"Notre entreprise offre également des services spécialisés de réfection des murs et des plafonds, complémentaires à notre expertise dans l'installation de poêles, cheminées et conduits. Que ce soit pour préparer vos murs et plafonds avant l'installation d'un nouveau système de chauffage ou pour rénover l'esthétique de votre intérieur après travaux, notre équipe expérimentée est là pour vous offrir des solutions sur mesure. Nous nous engageons à utiliser des matériaux de qualité et des techniques de pointe pour garantir des résultats durables et esthétiquement agréables. Faites confiance à notre expertise pour transformer votre espace avec professionnalisme et précision, en harmonie avec vos besoins et votre vision."}
                             </p>
                             <button className="py-2 px-4 bg-orange-500 hover:bg-orange-600 text-white rounded-lg">
                                 <a href="/contact">
-                                    Nous-Contacter
+                                    Contactez-nous
                                 </a>
                             </button>
                         </div>
