@@ -116,8 +116,11 @@ const ContactSection = () => {
                                         </svg>
                                     </div>
                                     <h3 className="mb-4 text-2xl md:text-3xl font-bold leading-9 text-coolGray-900">Bureau</h3>
-                                    <p className="text-lg md:text-xl text-coolGray-500 font-medium">1686, Geraldine Lane</p>
-                                    <p className="text-lg md:text-xl text-coolGray-500 font-medium">New York, NY 10013</p>
+                                    <p className="text-lg md:text-xl text-coolGray-500 font-medium">127 cavée bruyet 60140 Labruyère</p>
+                                    <p className="text-lg md:text-xl text-coolGray-500 font-medium">Siren: 930 346 952</p>
+                                    <p className="text-lg md:text-xl text-coolGray-500 font-medium">Siret : 930 346 952 00011</p>
+                                    <p className="text-lg md:text-xl text-coolGray-500 font-medium">Nr tva : FR19930346952</p>
+                                    <p className="text-lg md:text-xl text-coolGray-500 font-medium">Numéro RCS : 930 346 952 R.C.S. Beauvais</p>
                                 </div>
                             </div>
                             <div className="w-full md:w-1/2 px-4 mb-10">
