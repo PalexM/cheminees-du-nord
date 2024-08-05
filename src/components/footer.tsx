@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import { connect } from '../../node_modules/next/dist/esm/client/dev/noop-turbopack-hmr';
 
 const CURRENT_YEAR = new Date().getFullYear();
 const LINKS = ["Company", "About Us", "Team", "Products", "Blog"];
