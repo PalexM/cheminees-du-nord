@@ -10,8 +10,8 @@ const ContactSection = () => {
     const [captchaValue, setCaptchaValue] = useState('');
     const [captchaResult, setCaptchaResult] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [confirmationMessage, setConfirmationMessage] = useState('');
 
-    // CAPTCHA Logic
     const generateCaptcha = () => {
         const val1 = Math.floor(Math.random() * 10);
         const val2 = Math.floor(Math.random() * 10);
@@ -20,29 +20,55 @@ const ContactSection = () => {
         setCaptchaResult(result.toString());
     };
 
-    const handleSubmit = (e: any) => {
+    useEffect(() => {
+        generateCaptcha();
+    }, []);
+
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
         if (captchaInputValue !== captchaResult) {
-            alert('Captcha incorrect!');
+            console.log('Captcha incorrect!');
             return;
         }
         setIsLoading(true);
-        // Simulated form submission
-        setTimeout(() => {
-            alert('Form submitted successfully!');
+    
+        try {
+            const response = await fetch('/sendMail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, message, phone }),
+            });
+            
+            const result = await response.json();
+            
+            if (!response.ok) {
+                console.error('Error submitting form:', result.message);
+                setConfirmationMessage(result.message || 'An error occurred while sending the email.');
+            } else {
+                console.log('Form submitted successfully:', result.message);
+                setConfirmationMessage(result.message || 'Email sent successfully! We will get back to you shortly.');
+            }
+        } catch (error: any) {
+            console.log('Error submitting form: ' + error.message);
+            setConfirmationMessage('An error occurred: ' + error.message);
+        } finally {
             setIsLoading(false);
             setEmail('');
             setMessage('');
             setPhone('');
             setCaptchaInputValue('');
             generateCaptcha();
-        }, 2000);
+        }
     };
+    
 
-    // Generate CAPTCHA on initial render
-    useEffect(() => {
-        generateCaptcha();
-    }, []);
+    const handleEmailChange = (e:any) => setEmail(e.target.value);
+    const handleMessageChange = (e:any) => setMessage(e.target.value);
+    const handlePhoneChange = (e:any) => setPhone(e.target.value);
+    const handleCaptchaInputChange = (e:any) => setCaptchaInputValue(e.target.value);
+
 
     return (
         <section className="py-12 md:py-16 bg-white" style={{ backgroundImage: "url('/image/pattern-white.svg')", backgroundPosition: 'center' }}>
@@ -66,7 +92,7 @@ const ContactSection = () => {
                                         </svg>
                                     </div>
                                     <h3 className="mb-4 text-2xl md:text-3xl font-bold leading-9 text-coolGray-900">Email</h3>
-                                    <a className="text-lg md:text-xl text-coolGray-500 hover:text-coolGray-600 font-medium" href="mailto:#">contact@flex.co</a>
+                                    <a className="text-lg md:text-xl text-coolGray-500 hover:text-coolGray-600 font-medium" href="mailto:contact@cheminees-du-nord.fr" >contact@cheminees-du-nord.fr</a>
                                 </div>
                             </div>
                             <div className="w-full md:w-1/2 px-4 mb-10">
@@ -77,7 +103,9 @@ const ContactSection = () => {
                                         </svg>
                                     </div>
                                     <h3 className="mb-4 text-2xl md:text-3xl font-bold leading-9 text-coolGray-900">Telephone</h3>
-                                    <p className="text-lg md:text-xl text-coolGray-500 font-medium">+ 7-843-672-431</p>
+                                    <p className="text-lg md:text-xl text-coolGray-500 font-medium"><a href="tel:+33123456789" >
+        06 58 28 57 56
+      </a></p>
                                 </div>
                             </div>
                             <div className="w-full md:w-1/2 px-4 mb-10">
@@ -119,70 +147,87 @@ const ContactSection = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full lg:w-1/2 px-4">
-                        <div className="px-4 py-8 md:p-10 bg-coolGray-50 rounded-md">
-                            <form onSubmit={handleSubmit}>
-                                <div className="mb-6">
-                                    <label className="block mb-2 text-coolGray-800 font-medium leading-6" htmlFor="email">
-                                        Email
-                                    </label>
-                                    <input
-                                        className="block w-full py-2 px-3 appearance-none border border-coolGray-200 rounded-lg shadow-md text-coolGray-500 leading-6 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-                                        type="email"
-                                        placeholder="dupont@hotmail.fr"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        required
-                                    />
-                                </div>
-                                <div className="mb-6">
-                                    <label className="block mb-2 text-coolGray-800 font-medium leading-6" htmlFor="phone">
-                                        Telephone
-                                    </label>
-                                    <input
-                                        className="block w-full py-2 px-3 appearance-none border border-coolGray-200 rounded-lg shadow-md text-coolGray-500 leading-6 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-                                        type="tel"
-                                        placeholder="+1234567890"
-                                        value={phone}
-                                        onChange={(e) => setPhone(e.target.value)}
-                                        required
-                                    />
-                                </div>
-                                <div className="mb-6">
-                                    <label className="block mb-2 text-coolGray-800 font-medium leading-6" htmlFor="message">
-                                        Message
-                                    </label>
-                                    <textarea
-                                        className="block h-32 md:h-52 w-full py-2 px-3 appearance-none border border-coolGray-200 rounded-lg shadow-md text-coolGray-500 leading-6 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 placeholder-coolGray-200 resize-none"
-                                        placeholder="Bonjour, je souhaiterai avoir quelques informations..."
-                                        value={message}
-                                        onChange={(e) => setMessage(e.target.value)}
-                                        required
-                                    ></textarea>
-                                </div>
-                                <div className="mb-6">
-                                    <label className="block mb-2 text-coolGray-800 font-medium leading-6" title="Veuillez resoudre ce captha par mesure de securite svp" htmlFor="captcha">
-                                        {`CAPTCHA: ${captchaValue}`}
-                                    </label>
-                                    <input
-                                        className="block w-full py-2 px-3 appearance-none border border-coolGray-200 rounded-lg shadow-md text-coolGray-500 leading-6 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-                                        type="text"
-                                        placeholder="Result"
-                                        value={captchaInputValue}
-                                        onChange={(e) => setCaptchaInputValue(e.target.value)}
-                                        required
-                                    />
-                                </div>
-                                <button
-                                    className="block w-full py-4 px-6 text-lg leading-6 text-coolGray-50 font-medium text-center bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-md shadow-sm"
-                                    type="submit"
-                                    disabled={isLoading}
-                                >
-                                    {isLoading ? 'Sending...' : 'Send'}
-                                </button>
-                            </form>
+    <div className="w-full lg:w-1/2 px-4">
+        <div className="px-4 py-8 md:p-10 bg-coolGray-50 rounded-md">
+            <form onSubmit={handleSubmit}>
+                <div className="mb-6">
+                    <label className="block mb-2 text-coolGray-800 font-medium leading-6" htmlFor="email">
+                        Email
+                    </label>
+                    <input
+                        className="block w-full py-2 px-3 appearance-none border border-coolGray-200 rounded-lg shadow-md text-coolGray-500 leading-6 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                        type="email"
+                        placeholder="dupont@hotmail.fr"
+                        value={email}
+                        onChange={handleEmailChange}
+                        required
+                    />
+                </div>
+                <div className="mb-6">
+                    <label className="block mb-2 text-coolGray-800 font-medium leading-6" htmlFor="phone">
+                        Telephone
+                    </label>
+                    <input
+                        className="block w-full py-2 px-3 appearance-none border border-coolGray-200 rounded-lg shadow-md text-coolGray-500 leading-6 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                        type="tel"
+                        placeholder="+1234567890"
+                        value={phone}
+                        onChange={handlePhoneChange}
+                        required
+                    />
+                </div>
+                <div className="mb-6">
+                    <label className="block mb-2 text-coolGray-800 font-medium leading-6" htmlFor="message">
+                        Message
+                    </label>
+                    <textarea
+                        className="block h-32 md:h-52 w-full py-2 px-3 appearance-none border border-coolGray-200 rounded-lg shadow-md text-coolGray-500 leading-6 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 placeholder-coolGray-200 resize-none"
+                        placeholder="Bonjour, je souhaiterai avoir quelques informations..."
+                        value={message}
+                        onChange={handleMessageChange}
+                        required
+                    ></textarea>
+                </div>
+                <div className="mb-6">
+                    <label className="block mb-2 text-coolGray-800 font-medium leading-6" title="Veuillez resoudre ce captha par mesure de securite svp" htmlFor="captcha">
+                        {`CAPTCHA: ${captchaValue}`}
+                    </label>
+                    <input
+                        className="block w-full py-2 px-3 appearance-none border border-coolGray-200 rounded-lg shadow-md text-coolGray-500 leading-6 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                        type="text"
+                        placeholder="Result"
+                        value={captchaInputValue}
+                        onChange={handleCaptchaInputChange}
+                        required
+                    />
+                </div>
+                <button
+                    className="block w-full py-4 px-6 text-lg leading-6 text-coolGray-50 font-medium text-center bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-md shadow-sm"
+                    type="submit"
+                    disabled={isLoading}
+                >
+                    {isLoading ? 'Envoyer...' : 'Envoyer'}
+                </button>
+            </form>
+            {confirmationMessage && (
+                <div className="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md mt-6" role="alert">
+                    <div className="flex">
+                        <div className="py-1">
+                            <svg className="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p className="font-bold">Notification</p>
+                            <p className="text-sm">{confirmationMessage}</p>
                         </div>
                     </div>
+                </div>
+            )}
+        </div>
+    </div>
+
+
                 </div>
             </div>
         </section>
