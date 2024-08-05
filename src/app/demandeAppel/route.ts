@@ -14,7 +14,7 @@ export async function POST(request: Request) {
 
         const mailOptions = {
             from: process.env.YAHOO_USER!,
-            to: 'p.alexandru008@gmail.com',
+            to: 'contact@cheminees-du-nord.fr',
             subject: 'Demande d\'appel de Cheminées du Nord',
             html: `
                 <div style="background-color: #f5f5f5; padding: 20px;">
