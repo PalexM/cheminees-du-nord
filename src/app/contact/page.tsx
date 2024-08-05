@@ -45,10 +45,10 @@ const ContactSection = () => {
             
             if (!response.ok) {
                 console.error('Error submitting form:', result.message);
-                setConfirmationMessage(result.message || 'An error occurred while sending the email.');
+                setConfirmationMessage(result.message || "Une erreur s'est produite lors de l'envoi de l'e-mail.");
             } else {
                 console.log('Form submitted successfully:', result.message);
-                setConfirmationMessage(result.message || 'Email sent successfully! We will get back to you shortly.');
+                setConfirmationMessage(result.message || 'E-mail envoyé avec succès! Nous vous répondrons sous peu.');
             }
         } catch (error: any) {
             console.log('Error submitting form: ' + error.message);
