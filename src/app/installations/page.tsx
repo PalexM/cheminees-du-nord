@@ -1,50 +1,119 @@
-"use client";
+import { Metadata } from 'next';
+import InstallationsClient from './installations-client';
 
-import React from 'react';
+// Métadonnées pour la page (côté serveur)
+export const metadata = {
+  title: 'Installation de Poêles et Cheminées | Service Professionnel de Pose',
+  description: 'Experts en pose et installation de poêles à bois, cheminées sur mesure et inserts. Service complet d\'installation aux normes par des professionnels qualifiés dans toute la région Hauts-de-France.',
+  keywords: ['installation poêle', 'pose cheminée', 'installation insert', 'cheminée sur mesure', 'pose poêle à bois', 'installation poêle granulés', 'cheministe professionnel', 'installation aux normes DTU'],
+  alternates: {
+    canonical: 'https://votresite.com/installations',
+  },
+  openGraph: {
+    title: 'Installation Professionnelle de Poêles et Cheminées',
+    description: 'Faites installer votre poêle ou cheminée par nos experts certifiés. Solutions sur mesure, installation aux normes et garantie de qualité.',
+    url: 'https://votresite.com/installations',
+    siteName: 'Cheminées du Nord',
+    images: [
+      {
+        url: 'https://votresite.com/image/realisations/img12.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Installation professionnelle de poêle à bois',
+      },
+    ],
+    locale: 'fr_FR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Experts en Installation de Poêles et Cheminées',
+    description: 'Faites confiance à nos techniciens certifiés pour l\'installation de votre poêle à bois, insert ou cheminée. Service complet et pose aux normes.',
+    images: ['https://votresite.com/image/realisations/img12.jpeg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
 
-const Installations = () => {
-    return (
-        <section className="relative bg-white overflow-hidden" style={{ backgroundImage: "url('/image/pattern-white.svg')", backgroundPosition: "center" }}>
-            <div className="py-12 md:py-16">
-                <div className="container px-4 mx-auto">
-                    <div className="text-center mb-16">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight font-bold tracking-tight">
-                            {"Pose et Installation de Poêles et Cheminées"}
-                        </h1>
-                    </div>
-                    <div className="flex flex-wrap xl:items-start -mx-4">
-                        <div className="w-full md:w-1/2 px-4 mb-16 md:mb-0 md:pr-12">
-                            <h2 className="mb-6 text-2xl md:text-3xl lg:text-4xl leading-tight  tracking-tight">
-                                {"Installation expert de poêles et cheminées sur mesure"}
-                            </h2>
-                            <p className="text-lg mb-4 text-gray-700">
-                                {"Notre entreprise se spécialise dans l'installation professionnelle de poêles et cheminées, offrant une gamme complète de services pour répondre à vos besoins spécifiques. Que vous souhaitiez ajouter une touche chaleureuse et élégante à votre intérieur avec une cheminée traditionnelle en pierre ou opter pour un poêle moderne à haute efficacité énergétique, nous sommes là pour vous aider. Nos installateurs expérimentés assurent non seulement une installation sûre et conforme aux normes, mais également une esthétique qui s'intègre harmonieusement à votre espace. Nous nous engageons à vous fournir des solutions de chauffage durable et économique, tout en mettant l'accent sur la sécurité et la satisfaction du client."}
-                            </p>
-                            <button className="py-2 px-4 bg-orange-500 hover:bg-orange-600 text-white rounded-lg">
-                                <a href="/contact">
-                                Contactez-nous
-                                </a>
-                            </button>
-                        </div>
-                        <div className="w-full md:w-1/2 px-4 lg:px-12"> {/* Adjusted padding for larger screens */}
-                            <div className="relative mx-auto md:mr-0 max-w-full">
-                                <img
-                                    className="absolute z-10 -right-7 -bottom-8 w-28 lg:w-36 xl:w-48"
-                                    src="image/dots.svg"
-                                    alt="Blue Dots"
-                                />
-                                <img
-                                    className="relative w-full h-auto rounded-2xl object-cover"
-                                    src="/image/realisations/img12.jpeg"
-                                    alt="Installation de cheminée"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+// Composant page (côté serveur)
+export default function InstallationsPage() {
+  // Données structurées pour le SEO (Schema.org)
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    'name': 'Installation de Poêles et Cheminées',
+    'serviceType': 'Pose et installation de systèmes de chauffage',
+    'provider': {
+      '@type': 'LocalBusiness',
+      'name': 'Cheminées du Nord',
+      'address': {
+        '@type': 'PostalAddress',
+        'streetAddress': '127 Rue Cavée Bruyet',
+        'addressLocality': 'Labruyère',
+        'postalCode': '60140',
+        'addressCountry': 'FR'
+      },
+      'telephone': '+33658285756',
+      'priceRange': '€€€',
+      'image': 'https://votresite.com/image/logo_firma.png'
+    },
+    'areaServed': ['Oise', 'Nord', 'Hauts-de-France', 'Île-de-France'],
+    'description': 'Service professionnel d\'installation et pose de poêles à bois, poêles à granulés, inserts et cheminées. Installation aux normes DTU 24.1 par des techniciens certifiés.',
+    'hasOfferCatalog': {
+      '@type': 'OfferCatalog',
+      'name': 'Services d\'installation',
+      'itemListElement': [
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Installation de poêle à bois'
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Pose d\'insert de cheminée'
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Installation de poêle à granulés'
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Création de cheminée sur mesure'
+          }
+        }
+      ]
+    }
+  };
+
+  return (
+    <>
+      {/* Script JSON-LD pour l'enrichissement des résultats de recherche */}
+      <script 
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
+      {/* Composant client */}
+      <InstallationsClient />
+    </>
+  );
 }
-
-export default Installations;

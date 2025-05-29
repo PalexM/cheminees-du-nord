@@ -9,6 +9,8 @@ import Expertises from "./expertise";
 import { cookies } from "next/headers";
 import Environement from "./environement";
 import InfoSection from "./cards";
+import SeoServices from "./services";
+import SeoFaq from "./faq";
 
 export default function Campaign() {
   console.log(cookies())
@@ -16,8 +18,10 @@ export default function Campaign() {
     <>
 
       <Hero />
-      <Expertises />
-      <InfoSection />
+      <SeoServices />
+      {/* <Expertises /> */}
+      {/* <InfoSection /> */}
+      <SeoFaq />
       <Environement />
 
     </>

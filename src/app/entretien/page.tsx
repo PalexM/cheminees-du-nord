@@ -1,62 +1,121 @@
-"use client";
+import { Metadata } from 'next';
+import EntretienClient from './entretien-client';
 
-import React from 'react';
-
-const Entretien = () => {
-    return (
-        <section className="relative bg-white overflow-hidden" style={{ backgroundImage: "url('/image/pattern-white.svg')", backgroundPosition: "center" }}>
-            <div className="py-12 md:py-16">
-                <div className="container px-4 mx-auto">
-                    <div className="text-center mb-16">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight font-bold tracking-tight">
-                            {"Nettoyage, Entretien et Ramonage de Conduits et Cheminées"}
-                        </h1>
-                    </div>
-                    <div className="flex flex-wrap xl:items-start -mx-4">
-                        <div className="w-full md:w-1/2 px-4 mb-16 md:mb-0 md:pr-12">
-                            <h2 className="mb-6 text-2xl md:text-3xl lg:text-4xl leading-tight  tracking-tight">
-                                {"Entretien régulier et ramonage pour la sécurité de votre maison"}
-                            </h2>
-                            <p className="text-lg mb-4 text-gray-700">
-                                {"Assurez-vous que vos cheminées et conduits fonctionnent de manière optimale avec nos services professionnels de nettoyage, entretien et ramonage. L'entretien régulier et le ramonage sont non seulement essentiels pour prévenir les risques d'incendie, mais ils sont également obligatoires selon la réglementation en vigueur. Un entretien régulier assure une efficacité énergétique maximale et prolonge la durée de vie de vos installations."}
-                            </p>
-                            <p className="text-lg mb-4 text-gray-700">
-                                {"Nos techniciens qualifiés utilisent des méthodes avancées et des équipements spécialisés pour éliminer efficacement les dépôts de suie, les obstructions et autres résidus nuisibles. En choisissant nos services, vous bénéficiez de plusieurs avantages:"}
-                            </p>
-                            <ul className="list-disc list-inside mb-4 text-left">
-                                <li><b>{"Sécurité accrue : Réduction des risques d'incendie et d'intoxication au monoxyde de carbone."}</b></li>
-                                <li><b>{"Efficacité énergétique : Meilleure performance de vos systèmes de chauffage, réduisant ainsi vos coûts énergétiques."}</b></li>
-                                <li><b>{"Conformité réglementaire : Respect des obligations légales de ramonage, évitant les amendes et les complications juridiques."}</b></li>
-                                <li><b>{"Tranquillité d'esprit : Savoir que votre système de chauffage est entretenu selon les normes les plus strictes de sécurité et de performance."}</b></li>
-                            </ul>
-                            <p className="text-lg text-gray-700 mb-4">
-                                {"Faites confiance à notre expertise pour un entretien complet et professionnel de vos conduits et cheminées, garantissant un environnement sûr et confortable pour votre maison."}
-                            </p>
-                            <button className="py-2 px-4 bg-orange-500 hover:bg-orange-600 text-white rounded-lg mb-4">
-                                <a href="/contact">
-                                Contactez-nous
-                                </a>
-                            </button>
-                        </div>
-                        <div className="w-full md:w-1/2 px-4 lg:px-12"> {/* Adjusted padding for larger screens */}
-                            <div className="relative mx-auto md:mr-0 max-w-full">
-                                <img
-                                    className="absolute z-10 -right-7 -bottom-8 w-28 lg:w-36 xl:w-48"
-                                    src="image/dots.svg"
-                                    alt="Blue Dots"
-                                />
-                                <img
-                                    className="relative w-full h-auto rounded-2xl object-cover"
-                                    src="/image/realisations/img5.jpeg"
-                                    alt="Stove Installation"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+// Métadonnées pour la page (côté serveur)
+export const metadata = {
+  title: 'Ramonage et Entretien de Cheminées | Nettoyage de Conduits Professionnel',
+  description: 'Service professionnel de ramonage, nettoyage et entretien de conduits et cheminées. Intervention par des spécialistes certifiés pour assurer sécurité et performance de votre installation.',
+  keywords: ['ramonage cheminée', 'entretien conduit', 'nettoyage cheminée', 'ramonage obligatoire', 'ramoneur certifié', 'sécurité cheminée', 'certificat de ramonage', 'prévention incendie'],
+  alternates: {
+    canonical: 'https://cheminees-du-nord.fr/entretien',
+  },
+  openGraph: {
+    title: 'Ramonage et Entretien de Cheminées | Service Professionnel',
+    description: 'Entretenez votre cheminée grâce à nos services professionnels de ramonage et nettoyage. Conformité garantie et sécurité optimale pour votre foyer.',
+    url: 'https://cheminees-du-nord.fr/entretien',
+    siteName: 'Cheminées du Nord',
+    images: [
+      {
+        url: 'https://cheminees-du-nord.fr/image/realisations/img5.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Entretien et ramonage professionnel de cheminée',
+      },
+    ],
+    locale: 'fr_FR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Service d\'Entretien et Ramonage de Cheminées',
+    description: 'Entretien professionnel et ramonage de cheminées pour garantir sécurité et performance. Service certifié et conforme à la réglementation.',
+    images: ['https://cheminees-du-nord.fr/image/realisations/img5.jpeg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
-export default Entretien;
+// Composant page (côté serveur)
+export default function EntretienPage() {
+  // Données structurées pour le SEO (Schema.org)
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    'name': 'Nettoyage et Ramonage de Cheminées',
+    'serviceType': 'Entretien et ramonage de conduits',
+    'provider': {
+      '@type': 'LocalBusiness',
+      'name': 'Cheminées du Nord',
+      'address': {
+        '@type': 'PostalAddress',
+        'streetAddress': '127 Rue Cavée Bruyet',
+        'addressLocality': 'Labruyère',
+        'postalCode': '60140',
+        'addressCountry': 'FR'
+      },
+      'telephone': '+33658285756',
+      'priceRange': '€€',
+      'image': 'https://cheminees-du-nord.fr/image/logo_firma.png'
+    },
+    'areaServed': ['Oise', 'Nord', 'Hauts-de-France', 'Île-de-France'],
+    'description': 'Service professionnel de ramonage, nettoyage et entretien de conduits de cheminée par des techniciens certifiés. Respect des normes en vigueur et délivrance d\'un certificat de ramonage.',
+    'offers': {
+      '@type': 'Offer',
+      'availability': 'https://schema.org/InStock',
+      'priceCurrency': 'EUR',
+      'priceSpecification': {
+        '@type': 'PriceSpecification',
+        'description': 'Sur devis selon type d\'installation et complexité du travail'
+      }
+    },
+    'hasOfferCatalog': {
+      '@type': 'OfferCatalog',
+      'name': 'Services d\'entretien de cheminée',
+      'itemListElement': [
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Ramonage de conduit de cheminée'
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Nettoyage et dégraissage de hotte'
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Inspection caméra des conduits'
+          }
+        }
+      ]
+    }
+  };
+
+  return (
+    <>
+      {/* Script JSON-LD pour l'enrichissement des résultats de recherche */}
+      <script 
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
+      {/* Composant client */}
+      <EntretienClient />
+    </>
+  );
+}
