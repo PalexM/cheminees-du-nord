@@ -261,51 +261,6 @@ export default function RootLayout({
             })
           }}
         />
-
-        {/* Schema.org pour la FAQ */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Comment réparer une cheminée qui fume dans la maison ?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Une cheminée qui fume peut être causée par plusieurs facteurs : un conduit obstrué, un tirage insuffisant ou une mauvaise installation. Nos experts interviennent pour diagnostiquer précisément l'origine du problème et y apporter une solution adaptée. Nous vérifions l'état du conduit, la qualité du tirage et proposons des solutions comme le ramonage, le tubage ou l'installation d'un extracteur si nécessaire."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Comment rénover une vieille cheminée qui ne fonctionne plus ?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "La rénovation d'une cheminée ancienne commence par un diagnostic complet pour identifier les problèmes. Elle peut inclure le tubage du conduit, l'installation d'un insert moderne, la réfection du foyer ou la mise aux normes complète selon les réglementations en vigueur. Nos artisans respectent le charme de votre cheminée tout en améliorant ses performances et sa sécurité."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Faut-il un tubage pour installer un insert de cheminée ?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Oui, l'installation d'un insert nécessite généralement un tubage du conduit. Le tubage permet d'assurer l'étanchéité, d'optimiser le tirage et de garantir la sécurité de l'installation en évacuant efficacement les fumées et les gaz de combustion. C'est une obligation réglementaire dans la plupart des cas pour être conforme aux normes actuelles."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Comment savoir si ma cheminée est dangereuse ?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Plusieurs signes peuvent indiquer qu'une cheminée présente un danger : présence de fissures dans le conduit, fumée qui revient dans la pièce, odeurs anormales, traces de suie excessive, matériaux dégradés ou absence de ramonage récent. Un diagnostic professionnel est recommandé si vous constatez ces symptômes ou si votre installation est ancienne et n'a pas été contrôlée depuis longtemps."
-                  }
-                }
-              ]
-            })
-          }}
-        />
         
         {/* Schema.org WebSite pour les fonctionnalités de recherche */}
         <script
