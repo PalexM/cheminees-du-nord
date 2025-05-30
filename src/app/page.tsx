@@ -1,15 +1,12 @@
-import { Metadata } from "next";
 import Hero from "./hero";
+import Expertises from "./expertise";
 import { cookies } from "next/headers";
 import Environement from "./environement";
 import SeoServices from "./services";
 import SeoFaq from "./faq";
 
-// Renommez cette variable pour éviter les conflits
-export const pageMetadata: Metadata = {
-  title: "Cheminées du Nord | Votre expert cheministe dans le Nord, l'Oise et l'Île-de-France",
-  description: "Installation, réparation et rénovation de cheminées et poêles à bois par des artisans qualifiés. Service de qualité dans le Nord (59), l'Oise (60), les Hauts-de-France et l'Île-de-France.",
-};
+// Supprimez complètement l'exportation de metadata ici
+// Next.js utilisera automatiquement celle du layout.tsx
 
 export default function Campaign() {
   console.log(cookies())
