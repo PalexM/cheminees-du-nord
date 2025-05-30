@@ -16,7 +16,7 @@ export const metadata = {
     siteName: 'Cheminées du Nord',
     images: [
       {
-        url: 'https://votresite.com/image/realisations/img12.jpeg',
+        url: 'https://cheminees-du-nord.fr/image/twitter-card.jpg',
         width: 1200,
         height: 630,
         alt: 'Installation professionnelle de poêle à bois',
@@ -29,7 +29,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Experts en Installation de Poêles et Cheminées',
     description: 'Faites confiance à nos techniciens certifiés pour l\'installation de votre poêle à bois, insert ou cheminée. Service complet et pose aux normes.',
-    images: ['https://votresite.com/image/realisations/img12.jpeg'],
+    images: ['https://cheminees-du-nord.fr/image/twitter-card.jpg'],
   },
   robots: {
     index: true,

@@ -16,7 +16,7 @@ export const metadata = {
     siteName: 'Cheminées du Nord',
     images: [
       {
-        url: 'https://cheminees-du-nord.fr/image/realisations/img21.jpeg',
+        url: 'https://cheminees-du-nord.fr/image/twitter-card.jpg',
         width: 1200,
         height: 630,
         alt: 'Installation professionnelle de conduits de cheminée',
@@ -29,7 +29,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Experts en Création de Conduits de Cheminée',
     description: 'Installation sur mesure de conduits pour cheminées et poêles à bois. Solutions adaptées à votre habitation par des professionnels certifiés.',
-    images: ['https://cheminees-du-nord.fr/image/realisations/img21.jpeg'],
+    images: ['https://cheminees-du-nord.fr/image/twitter-card.jpg'],
   },
   robots: {
     index: true,

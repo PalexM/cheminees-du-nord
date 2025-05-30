@@ -16,7 +16,7 @@ export const metadata = {
     siteName: 'Cheminées du Nord',
     images: [
       {
-        url: 'https://cheminees-du-nord.fr/image/realisations/img5.jpeg',
+        url: 'https://cheminees-du-nord.fr/image/twitter-card.jpg',
         width: 1200,
         height: 630,
         alt: 'Entretien et ramonage professionnel de cheminée',
@@ -29,7 +29,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Service d\'Entretien et Ramonage de Cheminées',
     description: 'Entretien professionnel et ramonage de cheminées pour garantir sécurité et performance. Service certifié et conforme à la réglementation.',
-    images: ['https://cheminees-du-nord.fr/image/realisations/img5.jpeg'],
+    images: ['https://cheminees-du-nord.fr/image/twitter-card.jpg'],
   },
   robots: {
     index: true,

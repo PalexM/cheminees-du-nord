@@ -16,7 +16,7 @@ export const metadata = {
     siteName: 'Cheminées du Nord',
     images: [
       {
-        url: 'https://cheminees-du-nord.fr/image/realisations/img.jpeg',
+        url: 'https://cheminees-du-nord.fr/image/twitter-card.jpg',
         width: 1200,
         height: 630,
         alt: 'Galerie de réalisations de cheminées et poêles',

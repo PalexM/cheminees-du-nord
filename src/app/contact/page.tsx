@@ -15,6 +15,14 @@ export const metadata = {
     url: 'https://cheminees-du-nord.fr/contact',
     siteName: 'Cheminées du Nord',
     locale: 'fr_FR',
+    images: [
+      {
+        url: 'https://cheminees-du-nord.fr/image/twitter-card.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Contact Cheminées du Nord',
+      },
+    ],
     type: 'website',
   },
 };

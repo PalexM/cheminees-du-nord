@@ -16,7 +16,7 @@ export const metadata = {
     siteName: 'Cheminées du Nord',
     images: [
       {
-        url: 'https://cheminees-du-nord.fr/image/realisations/img18.jpeg',
+        url: 'https://cheminees-du-nord.fr/image/twitter-card.jpg',
         width: 1200,
         height: 630,
         alt: 'Entretien et réparation professionnels de poêles',

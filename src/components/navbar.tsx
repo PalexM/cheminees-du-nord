@@ -50,7 +50,7 @@ const navListMenuItems = [
 ];
 
 // NavListMenu prend maintenant setOpenNav en prop pour pouvoir fermer le menu principal
-function NavListMenu({ setOpenNav }) {
+function NavListMenu({ setOpenNav }: { setOpenNav: React.Dispatch<React.SetStateAction<boolean>> }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
