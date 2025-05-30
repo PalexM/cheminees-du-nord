@@ -36,9 +36,6 @@ export default function Campaign() {
         <section 
           id="faq" 
           className="faq-section" 
-          aria-label="Questions fréquentes"
-          itemScope 
-          itemType="https://schema.org/FAQPage"
         >
           <SeoFaq />
         </section>
